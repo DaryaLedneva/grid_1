@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>        
+        {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        .wrapper {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 70% 30%;
+            grid-template-rows: 20% 60% 20%;
+            grid-template-areas: 
+            "header header"
+            "main aside"
+            "footer footer";
+            }
+        header {
+            border: 1px solid;
+            grid-area: header;
+            display: grid;
+            justify-self: center;
+            align-self: center;
+        }
+        main {
+            padding: 20px;
+            border: 1px solid;
+            grid-area: main;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 45% 20% 20%;
+            row-gap:30px;
+            column-gap: 20px;
+            grid-template-areas: 
+                "box_global box_global"
+                "up_box-1 up_box-2"
+                "up_box-3 up_box-3" ;
+        }
+        .box_global {
+            grid-area: box_global;
+        }
+        .up_box-1 {
+            grid-area: up_box-1;
+            background-color: antiquewhite;
+        }
+        .up_box-2 {
+            grid-area: up_box-2;
+            background-color: antiquewhite;
+        }
+        .up_box-3 {
+            grid-area: up_box-3;
+            background-color: antiquewhite;
+        }
+        .box_global,.up_box-1,.up_box-2,.up_box-3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        aside {
+            padding: 20px;
+            border: 1px solid;
+            grid-area: aside;
+            display: flex;
+            justify-content: center;
+
+        }
+        footer {
+            border: 1px solid;
+            grid-area: footer;
+            display: grid; 
+            grid-template-columns: repeat(4,25%);
+            align-items: center;
+            justify-items: center;
+            column-gap: 20px;
+        }
+        .box {
+            min-height: 70px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <header>
+        <h1>[шапка страницы]</h1>
+    </header>
+    <main>
+        <div class="box_global">[основная часть]</div>
+            <div class="up_box-1">[Ещё1]</div>
+            <div class="up_box-2">[Ещё2]</div>
+        <div class="up_box-3">[Ещё3]</div>
+    </main>
+    <aside>
+        [Боковая панель]
+    </aside>
+    <footer>
+        <div class="box">[Секция футера 1]</div>
+        <div class="box">[Секция футера 2]</div>
+        <div class="box">[Секция футера 3]</div>
+        <div class="box">[Секция футера 4]</div>
+    </footer>
+    </div>
+</body>
+</html>
